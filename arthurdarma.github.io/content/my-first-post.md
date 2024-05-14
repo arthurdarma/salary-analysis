@@ -29,10 +29,12 @@ The p-value is the probability of obtaining the observed data (or data more extr
 
 <p>The result is p-value is not less than our threshold of 0.05 so we do not reject null hypothesis. There is evidence that the amount of salary that the iSchool Professor gets and the average amount of salary of non-iSchool Professors are not significantly different.</p>
 
+## Aditional Analysis
 
 <p style="text-indent: 40px;">Since the School of Information Science (iSchool) contributes to a relatively small percentage of the total college population at UIUC, as shown in a pie chart below, I have decided to explore other aspects of the dataset further.</p>
 
 ![pie]({static}/assets/images/piechart.png)
+---
 ![graph2]({static}/assets/images/salarydist2.png)
 ![graph3]({static}/assets/images/salarydist3.png)
 ![vis]({static}/assets/images/visualization.png)

@@ -48,4 +48,5 @@ The p-value is the probability of obtaining the observed data (or data more extr
 
 <p style="text-indent: 40px;">In completing this project, one of the significant challenges I faced was interpreting and understanding the meaning of each column in the dataset including deciding which columns were relevant and which ones could be dropped or excluded from analysis. It was essential to determine the usefulness of each column in relation to the research questions and objectives of the project.</p>
 
-<p style="text-indent: 40px;">To overcome this challenge, carefully examine the dataset and identifying key variables that were essential for analysis. This involved conducting exploratory data analysis (EDA) to understand the distribution and relationships between variables, as well as cross-checking with the original source</p>
+<p style="text-indent: 40px;">To overcome this challenge, carefully examine the dataset and identifying key variables that were essential for analysis. This involved conducting exploratory data analysis (EDA) to understand the distribution and relationships between variables, as well as cross-checking with the original source.</p>
+<p style="text-indent: 40px;"> Thank you!</p>

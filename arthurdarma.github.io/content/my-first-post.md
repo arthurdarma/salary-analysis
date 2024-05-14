@@ -34,7 +34,9 @@ The p-value is the probability of obtaining the observed data (or data more extr
 <p style="text-indent: 40px;">Since the School of Information Science (iSchool) contributes to a relatively small percentage of the total college population at UIUC, as shown in a pie chart below, I have decided to explore other aspects of the dataset further.</p>
 
 ![pie]({static}/assets/images/piechart.png)
+
 ---
+
 ![graph2]({static}/assets/images/salarydist2.png)
 ![graph3]({static}/assets/images/salarydist3.png)
 ![vis]({static}/assets/images/visualization.png)

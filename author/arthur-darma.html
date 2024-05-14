@@ -5,30 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>Salary Analysis - Arthur Darma</title>
-        <link rel="stylesheet" href="../theme/css/main.css" />
+        <link rel="stylesheet" href="https://arthurdarma.github.io/salary-analysis/theme/css/main.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="../">Salary Analysis</a></h1>
+                <h1><a href="https://arthurdarma.github.io/salary-analysis/">Salary Analysis</a></h1>
                 <nav><ul>
-                    <li><a href="../category/about.html">About</a></li>
-                    <li><a href="../category/analysis.html">Analysis</a></li>
+                    <li><a href="https://arthurdarma.github.io/salary-analysis/category/about.html">About</a></li>
+                    <li><a href="https://arthurdarma.github.io/salary-analysis/category/analysis.html">Analysis</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../Salary-analysis.html">Salary Analysis in Higher Education</a></h1>
+                    <h1 class="entry-title"><a href="https://arthurdarma.github.io/salary-analysis/Salary-analysis.html">Salary Analysis in Higher Education</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2024-05-13T00:00:00-05:00">
                 Published: Mon 13 May 2024
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/arthur-darma.html">Arthur Darma</a>
+                By                         <a class="url fn" href="https://arthurdarma.github.io/salary-analysis/author/arthur-darma.html">Arthur Darma</a>
         </address>
-<p>In <a href="../category/analysis.html">Analysis</a>.</p>
+<p>In <a href="https://arthurdarma.github.io/salary-analysis/category/analysis.html">Analysis</a>.</p>
 
 </footer><!-- /.post-info --><h2>Introduction</h2>
 <p style="text-indent: 40px;"> The primary goal of this project is to analyze employee salaries in higher education institutions, specifically focusing on factors such as job title, college, and department. The aim is to identify patterns, trends, and potential disparities in salary distribution between Ischool Professors and Professors from another department. Understanding salary structures and potential discrepancies is crucial for ensuring fairness, and equity within the institution. (for example, we can take the average salary of people who works in ischool department and compare it with the population salary. Then we can conduct a z-test and look at the p-value to see if it is significantly lower, higher or they are the same and if it is due to chance ). Initially, I had planned to explore cultural evolution and dynamics by employing computational techniques to analyze historical texts. However, due to time constraints, I have opted to narrow down my research focus to the current topic.</p>
@@ -39,23 +39,23 @@ The data collection process involved accessing the Gray Book website and extract
 
 <p style="text-indent: 40px;">During the cleaning process, I dropped the 'tenure' and 'employee class' columns due to the high number of NaN values. Additionally, I removed the 'employee classes,' 'college code,' 'department code,' and 'job title' columns since they were either unnecessary for analysis or the information they contained could be found in other columns. I eliminated the entries that does not contain "PROF" in their Job Titles column, I also eliminated some college entries under the 'college name' column that lacked sufficient data. To address a specific question, I added new columns. One column identifies if an employee is under the School of Information, while the other is a categorical column indicating the number of job titles a person holds, which might be significant for determining present salary.</p>
 
-<p><img alt="Table" src="../assets/images/Screenshot 2024-05-13 050423.png"></p>
+<p><img alt="Table" src="https://arthurdarma.github.io/salary-analysis/assets/images/Screenshot 2024-05-13 050423.png"></p>
 <h2>Data Analysis &amp; Methods</h2>
 <p style="text-indent: 40px;">To answer our primary research question, we will employ two different methods. Firstly, we will analyze boxplots comparing the salaries of non-ISchool professors with ISchool professors. This analysis will focus on comparing the interquartile range (IQR) boxes and quartiles. Secondly, we will use p-values and conduct a one-sample two-sided z-test. The null hypothesis states that the salary of ISchool professors equals the average salary of non-ISchool professors, while the alternative hypothesis suggests that the salary of ISchool professors is not equal to the average salary of non-ISchool professors.</p>
 
-<p><img alt="graph1" src="../assets/images/salarydist.png"></p>
+<p><img alt="graph1" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist.png"></p>
 <p style="text-indent: 40px;">It appears that the median of both interquartile ranges (IQRs) is not significantly different, with the non-ISchool group having a slightly higher median. However, the third quartile (Q3) of the non-ISchool group is much higher than that of the ISchool group, suggesting that the salary is more spread out in the non-ISchool group. It's reasonable to observe greater salary variability among non-ISchool professors compared to ISchool professors, given that the ISchool consists of only one college, while the non-ISchool category includes the remaining 13 colleges which would contribute to variations in salary ranges and distribution.
 The p-value is the probability of obtaining the observed data (or data more extreme) if the null was true. We default to "accepting" the null hypothesis if the p-value is larger than our threshold of 0.05, although statisticians prefer we say do not reject the null instead of accept. We set our null hypothesis: average iSchool professor's salary = 119368.55585025887(average salary of non iSchool Professors), and our alternative hypothesis: average iSchool professor's salary ≠119368.55585025887(average salary of non iSchool Professors)</p>
 
-<p><img alt="ss" src="../assets/images/ss.png"></p>
+<p><img alt="ss" src="https://arthurdarma.github.io/salary-analysis/assets/images/ss.png"></p>
 <p>The result is p-value is not less than our threshold of 0.05 so we do not reject null hypothesis. There is evidence that the amount of salary that the iSchool Professor gets and the average amount of salary of non-iSchool Professors are not significantly different.</p>
 
 <p style="text-indent: 40px;">Since the School of Information Science (iSchool) contributes to a relatively small percentage of the total college population at UIUC, as shown in a pie chart below, I have decided to explore other aspects of the dataset further.</p>
 
-<p><img alt="pie" src="../assets/images/piechart.png">
-<img alt="graph2" src="../assets/images/salarydist2.png">
-<img alt="graph3" src="../assets/images/salarydist3.png">
-<img alt="vis" src="../assets/images/visualization.png"></p>
+<p><img alt="pie" src="https://arthurdarma.github.io/salary-analysis/assets/images/piechart.png">
+<img alt="graph2" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist2.png">
+<img alt="graph3" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist3.png">
+<img alt="vis" src="https://arthurdarma.github.io/salary-analysis/assets/images/visualization.png"></p>
 <p style="text-indent: 40px;"> In the first graph, we observe that the interquartile ranges (IQRs) between the five boxplots are not significantly different. This indicates that every college at UIUC maintains relatively equal pay for their professors across the board without notable discrepancies. What appears to be more influential in terms of determining salary is the number of job titles a professor holds at UIUC as we can see on the second graph. This phenomenon makes sense because holding multiple job titles often indicates additional responsibilities or specialized roles, which may lead to higher compensation.</p>
 
 <p style="text-indent: 40px;">Furthermore, it's noteworthy to mention that the proposed salary has a high correlation with the present salary. This correlation implies that most of the time, the salary proposed will align closely with the actual salary received, underscoring the consistency and reliability of salary proposals in reflecting actual compensation amounts.</p>
@@ -76,7 +76,7 @@ The p-value is the probability of obtaining the observed data (or data more extr
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../about.html" rel="bookmark"
+                    <h1><a href="https://arthurdarma.github.io/salary-analysis/about.html" rel="bookmark"
                            title="Permalink to About">About</a></h1>
                 </header>
 
@@ -87,12 +87,12 @@ The p-value is the probability of obtaining the observed data (or data more extr
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/arthur-darma.html">Arthur Darma</a>
+                By                         <a class="url fn" href="https://arthurdarma.github.io/salary-analysis/author/arthur-darma.html">Arthur Darma</a>
         </address>
-<p>In <a href="../category/about.html">About</a>.</p>
+<p>In <a href="https://arthurdarma.github.io/salary-analysis/category/about.html">About</a>.</p>
 
 </footer><!-- /.post-info -->                <p>This my first ever published website</p>
-                <a class="readmore" href="../about.html">read more</a>
+                <a class="readmore" href="https://arthurdarma.github.io/salary-analysis/about.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

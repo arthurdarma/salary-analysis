@@ -18,17 +18,17 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (
     ("IS310 Course Website", "https://zoeleblanc.com/is310-computing-humanities-2024/"),
-    ("A Course Project", "#"),
+    ("IS310 Course Projects", "https://github.com/arthurdarma/is310-coding-assignments"),
 )
 
 # Social widget
 SOCIAL = (
     ("Github", "https://github.com/arthurdarma"),
-    
+ 
    
 )
 
 DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['assets/images', 'assets/files']
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True

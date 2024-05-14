@@ -1,126 +1,51 @@
-<!DOCTYPE html>
-<html lang="english">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>Salary Analysis - Arthur Darma</title>
-        <link rel="stylesheet" href="https://arthurdarma.github.io/salary-analysis/theme/css/main.css" />
-</head>
+Title: Salary Analysis in Higher Education
+Date: 2024-05-13
+Category: Analysis
+Slug: Salary-analysis
+Authors: Arthur Darma
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://arthurdarma.github.io/salary-analysis/">Salary Analysis</a></h1>
-                <nav><ul>
-                    <li><a href="https://arthurdarma.github.io/salary-analysis/category/about.html">About</a></li>
-                    <li><a href="https://arthurdarma.github.io/salary-analysis/category/analysis.html">Analysis</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://arthurdarma.github.io/salary-analysis/Salary-analysis.html">Salary Analysis in Higher Education</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2024-05-13T00:00:00-05:00">
-                Published: Mon 13 May 2024
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://arthurdarma.github.io/salary-analysis/author/arthur-darma.html">Arthur Darma</a>
-        </address>
-<p>In <a href="https://arthurdarma.github.io/salary-analysis/category/analysis.html">Analysis</a>.</p>
-
-</footer><!-- /.post-info --><h2>Introduction</h2>
+## Introduction
 <p style="text-indent: 40px;"> The primary goal of this project is to analyze employee salaries in higher education institutions, specifically focusing on factors such as job title, college, and department. The aim is to identify patterns, trends, and potential disparities in salary distribution between Ischool Professors and Professors from another department. Understanding salary structures and potential discrepancies is crucial for ensuring fairness, and equity within the institution. (for example, we can take the average salary of people who works in ischool department and compare it with the population salary. Then we can conduct a z-test and look at the p-value to see if it is significantly lower, higher or they are the same and if it is due to chance ). Initially, I had planned to explore cultural evolution and dynamics by employing computational techniques to analyze historical texts. However, due to time constraints, I have opted to narrow down my research focus to the current topic.</p>
 
-<h2>Data Collection &amp; Curation</h2>
+## Data Collection & Curation
+
 <p style="text-indent: 40px;">For this project, the dataset was obtained from the Academic and Administrative Appointments (Gray Book) available at <a href="https://www.bot.uillinois.edu/resources/gray_book/">https://www.bot.uillinois.edu/resources/gray_book/</a>.  The dataset is in CSV format and includes several key columns necessary for the analysis. These columns are 'Employee Name', 'Job Title', 'Tenure', 'Employee Class', 'Present Salary', 'Proposed Salary', 'College Code', 'College Name', 'Department Code', 'Department Name', 'Job Titles', and 'Employee Classes' in Fall 2023.
 The data collection process involved accessing the Gray Book website and extracting the relevant information and phrased CSV file. This dataset contains information about all academic positions at UIUC. I use the pre-phrased dataset that is provided from another class so I don't need to do this process again.
 During the cleaning process, I dropped the 'tenure' and 'employee class' columns due to the high number of NaN values. Additionally, I removed the 'employee classes,' 'college code,' 'department code,' and 'job title' columns since they were either unnecessary for analysis or the information they contained could be found in other columns. I also eliminated some college entries under the 'college name' column that lacked sufficient data. To address a specific question, I added new columns. One column identifies if an employee is under the School of Information, while the other is a categorical column indicating the number of job titles a person holds, which is significant for determining present salary.</p>
 
-<p><img alt="Table" src="https://arthurdarma.github.io/salary-analysis/assets/images/Screenshot 2024-05-13 050423.png"></p>
-<h2>Data Analysis &amp; Methods</h2>
+![Table]({static}/assets/images/Screenshot 2024-05-13 050423.png)
+
+## Data Analysis & Methods
+
 <p style="text-indent: 40px;">To answer our primary research question, we will employ two different methods. Firstly, we will analyze boxplots comparing the salaries of non-ISchool professors with ISchool professors. This analysis will focus on comparing the interquartile range (IQR) boxes and quartiles. Secondly, we will use p-values and conduct a one-sample two-sided z-test. The null hypothesis states that the salary of ISchool professors equals the average salary of non-ISchool professors, while the alternative hypothesis suggests that the salary of ISchool professors is not equal to the average salary of non-ISchool professors.</p>
 
-<p><img alt="graph1" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist.png"></p>
+![graph1]({static}/assets/images/salarydist.png)
+
 <p style="text-indent: 40px;">It appears that the median of both interquartile ranges (IQRs) is not significantly different, with the non-ISchool group having a slightly higher median. However, the third quartile (Q3) of the non-ISchool group is much higher than that of the ISchool group, suggesting that the salary is more spread out in the non-ISchool group. It's reasonable to observe greater salary variability among non-ISchool professors compared to ISchool professors, given that the ISchool consists of only one college, while the non-ISchool category includes the remaining 13 colleges which would contribute to variations in salary ranges and distribution.
 The p-value is the probability of obtaining the observed data (or data more extreme) if the null was true. We default to "accepting" the null hypothesis if the p-value is larger than our threshold of 0.05, although statisticians prefer we say do not reject the null instead of accept. We set our null hypothesis: average iSchool professor's salary = 119368.55585025887(average salary of non iSchool Professors), and our alternative hypothesis: average iSchool professor's salary ≠119368.55585025887(average salary of non iSchool Professors)</p>
 
-<p><img alt="ss" src="https://arthurdarma.github.io/salary-analysis/assets/images/ss.png"></p>
+![ss]({static}/assets/images/ss.png)
+
 <p>The result is p-value is not less than our threshold of 0.05 so we do not reject null hypothesis. There is evidence that the amount of salary that the iSchool Professor gets and the average amount of salary of non-iSchool Professors are not significantly different.</p>
+
 
 <p style="text-indent: 40px;">Since the School of Information Science (iSchool) contributes to a relatively small percentage of the total college population at UIUC, as shown in a pie chart, I've decided to explore other aspects of the dataset further.</p>
 
-<p><img alt="pie" src="https://arthurdarma.github.io/salary-analysis/assets/images/piechart.png">
-<img alt="graph2" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist2.png">
-<img alt="graph3" src="https://arthurdarma.github.io/salary-analysis/assets/images/salarydist3.png">
-<img alt="vis" src="https://arthurdarma.github.io/salary-analysis/assets/images/visualization.png"></p>
+![pie]({static}/assets/images/piechart.png)
+![graph2]({static}/assets/images/salarydist2.png)
+![graph3]({static}/assets/images/salarydist3.png)
+![vis]({static}/assets/images/visualization.png)
+
 <p style="text-indent: 40px;"> In the first graph, we observe that the interquartile ranges (IQRs) between the five boxplots are not significantly different. This indicates that every college at UIUC maintains relatively equal pay for their professors across the board without notable discrepancies. What appears to be more influential in terms of determining salary is the number of job titles a professor holds at UIUC. This phenomenon makes sense because holding multiple job titles often indicates additional responsibilities or specialized roles, which may lead to higher compensation.</p>
 
 <p style="text-indent: 40px;">Furthermore, it's noteworthy to mention that the proposed salary has a high correlation with the present salary. This correlation implies that most of the time, the salary proposed will align closely with the actual salary received, underscoring the consistency and reliability of salary proposals in reflecting actual compensation amounts.</p>
 
-<h2>Conclusion &amp; Reflection</h2>
+## Conclusion & Reflection
+
 <p style="text-indent: 40px;">Based on the analysis, despite the higher Q3 and variability in salary among non-ISchool professors, the overall data doesn't show a significant difference, especially as the median salaries are very similar. This observation is further supported by our Hypothesis test, which indicates no significant difference between the average salary of ISchool professors and that of non-ISchool professors. This finding implies that factors other than department affiliation may play a more significant role in determining salary variations within the institution. Additionally, our exploration highlights the influence of the number of job titles an employer holds, in terms of salary. Holding multiple job titles often signifies additional responsibilities or specialized roles, influencing compensation levels.
 </p>
 <p style="text-indent: 40px;">Furthermore, we note a strong correlation between proposed and present salaries, indicating the reliability of salary proposals in reflecting actual compensation amounts. In conclusion, our analysis indicates that there is no significant salary discrepancy among colleges at UIUC. Moreover, the number of job titles and proposed salaries emerge as defining factors influencing salary levels within the institution.</p>
 
 <p style="text-indent: 40px;">In completing this project, one of the significant challenges I faced was interpreting and understanding the meaning of each column in the dataset including deciding which columns were relevant and which ones could be dropped or excluded from analysis. It was essential to determine the usefulness of each column in relation to the research questions and objectives of the project.</p>
 
-<p style="text-indent: 40px;">To overcome this challenge, carefully examine the dataset and identifying key variables that were essential for analysis. This involved conducting exploratory data analysis (EDA) to understand the distribution and relationships between variables, as well as cross-checking with the original source</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://arthurdarma.github.io/salary-analysis/about.html" rel="bookmark"
-                           title="Permalink to About">About</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2024-05-13T00:00:00-05:00">
-                Published: Mon 13 May 2024
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://arthurdarma.github.io/salary-analysis/author/arthur-darma.html">Arthur Darma</a>
-        </address>
-<p>In <a href="https://arthurdarma.github.io/salary-analysis/category/about.html">About</a>.</p>
-
-</footer><!-- /.post-info -->                <p>This my first ever published website</p>
-                <a class="readmore" href="https://arthurdarma.github.io/salary-analysis/about.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://zoeleblanc.com/is310-computing-humanities-2024/">IS310 Course Website</a></li>
-                            <li><a href="#">A Course Project</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="https://github.com/arthurdarma">Github</a></li>
-                            <li><a href="#">LinkedIn</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
-</html>
+<p style="text-indent: 40px;">To overcome this challenge, carefully examine the dataset and identifying key variables that were essential for analysis. This involved conducting exploratory data analysis (EDA) to understand the distribution and relationships between variables, as well as cross-checking with the original source</p>
